@@ -34,7 +34,7 @@ b2Body *World::createPerson(b2Vec2 position) {
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &personShape;
     fixtureDef.density = 1.0f;
-    fixtureDef.friction = 0.3f;
+    fixtureDef.friction = 2;
     fixtureDef.restitution = 0.1f;
     person->CreateFixture(&fixtureDef);
     return person;
