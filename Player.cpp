@@ -7,7 +7,6 @@
 #include <cmath>
 #include "Player.hpp"
 #include "const.hpp"
-#include <iostream>
 
 sf::View Player::getView(sf::Vector2u windowSize) {
     sf::View view = sf::View(sf::Vector2f(position), sf::Vector2f(windowSize));
@@ -69,7 +68,6 @@ void Player::update(sf::Window &window) {
             body->SetLinearVelocity(b2Vec2{body->GetLinearVelocity().x, 0});
         }
     }
-    std::cout << body->GetAngle() << std::endl;
     playerSprite.setPosition(position);
     sf::Vector2u windowCenter = window.getSize() / 2u;
     sf::Vector2i angle = sf::Mouse::getPosition(window) - sf::Vector2i(windowCenter);
