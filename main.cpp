@@ -3,6 +3,7 @@
 #include "const.hpp"
 #include "GroundDrawer.hpp"
 #include "Player.hpp"
+#include "World.hpp"
 
 int main() {
     sf::RenderWindow window(sf::VideoMode(defaultWindowWidth, defaultWindowHeight), "Let's Build It");
@@ -11,7 +12,8 @@ int main() {
     GroundDrawer groundDrawer;
     sf::RenderTexture groundRenderTexture;
     groundRenderTexture.create(defaultWidthTiles * tileSizePixels, defaultHeightTiles * tileSizePixels);
-    Player player;
+    World world;
+    Player player {world.createPerson((b2Vec2) {10, 10})};
     sf::Music music;
     music.openFromFile("res/soundtrack.ogg");
     music.setLoop(true); // temp until moar music
@@ -28,6 +30,7 @@ int main() {
             }
         }
         player.update(window);
+        world.step();
         window.setView(player.getView(window.getSize()));
         window.clear(sf::Color::Black);
         groundRenderTexture.clear(sf::Color::Red);

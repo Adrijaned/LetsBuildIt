@@ -9,7 +9,7 @@
 #include "Box2D/Common/b2Math.h"
 
 extern unsigned const int defaultWindowWidth, defaultWindowHeight, defaultWidthTiles, defaultHeightTiles, tileSizePixels;
-extern const float32 tileSizeMetres;
+extern const float32 tileSizeMetres, maxMoveSpeed;
 int random1000();
 
 #endif //LETSBUILD_CONST_HPP

@@ -11,7 +11,9 @@ class World {
     b2World *world;
     b2Body *worldBorder;
 public:
-    World(b2Vec2 size);
+    World();
+    b2Body *createPerson(b2Vec2 position);
+    void step();
 };
 
 

@@ -5,7 +5,7 @@
 #ifndef LETSBUILD_PLAYER_HPP
 #define LETSBUILD_PLAYER_HPP
 
-
+#include "Box2D/Box2D.h"
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -14,11 +14,12 @@ class Player : public sf::Drawable {
     float currentZoom = 1;
     sf::Vector2f position;
     sf::Sprite playerSprite;
+    b2Body *body;
 protected:
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 public:
     sf::View getView(sf::Vector2u windowSize);
-    Player();
+    explicit Player(b2Body *body);
     void update(sf::Window &window);
     void zoom(float &delta);
 };
