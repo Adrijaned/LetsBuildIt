@@ -6,8 +6,10 @@
 #define LETSBUILD_CONST_HPP
 
 #include <SFML/Graphics/Texture.hpp>
+#include "Box2D/Common/b2Math.h"
 
-extern unsigned const int defaultWindowWidth, defaultWindowHeight, defaultWidthTiles, defaultHeightTiles, tileSize;
+extern unsigned const int defaultWindowWidth, defaultWindowHeight, defaultWidthTiles, defaultHeightTiles, tileSizePixels;
+extern const float32 tileSizeMetres;
 int random1000();
 
 #endif //LETSBUILD_CONST_HPP

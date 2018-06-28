@@ -10,7 +10,7 @@ int main() {
 
     GroundDrawer groundDrawer;
     sf::RenderTexture groundRenderTexture;
-    groundRenderTexture.create(defaultWidthTiles * tileSize, defaultHeightTiles * tileSize);
+    groundRenderTexture.create(defaultWidthTiles * tileSizePixels, defaultHeightTiles * tileSizePixels);
     Player player;
     sf::Music music;
     music.openFromFile("res/soundtrack.ogg");
